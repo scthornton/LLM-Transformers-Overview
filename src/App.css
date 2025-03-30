@@ -1,0 +1,79 @@
+
+/* Reset some default styles */
+#root {
+  max-width: 100%;
+  margin: 0;
+  padding: 0;
+  text-align: left;
+}
+
+/* Print-specific styles */
+@media print {
+  body {
+    font-size: 12pt;
+    line-height: 1.45;
+    color: black;
+    background-color: white;
+  }
+
+  .container {
+    width: 100%;
+    max-width: 100%;
+  }
+  
+  h1, h2, h3, h4, h5, h6 {
+    page-break-after: avoid;
+  }
+  
+  img, svg, figure {
+    page-break-inside: avoid;
+    max-width: 100% !important;
+  }
+}
+
+/* Ensure code blocks display well */
+pre {
+  overflow-x: auto;
+  white-space: pre-wrap;
+  word-wrap: break-word;
+}
+
+/* Responsive font adjustments */
+@media (max-width: 640px) {
+  html {
+    font-size: 14px;
+  }
+}
+
+/* Chalkboard styles */
+.chalkboard {
+  position: relative;
+}
+
+.chalkboard::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-image: url("data:image/svg+xml,%3Csvg width='6' height='6' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='%23ffffff' fill-opacity='0.05'%3E%3Cpath d='M5 0h1L0 5v1H0V0h5z'/%3E%3Cpath d='M6 5v1H5l5-5V0h1v5H6z'/%3E%3C/g%3E%3C/svg%3E");
+  pointer-events: none;
+  opacity: 0.2;
+}
+
+.chalkboard text {
+  font-family: 'Comic Sans MS', cursive, sans-serif;
+  filter: url(#chalkTexture);
+}
+
+.chalkboard path,
+.chalkboard rect,
+.chalkboard circle,
+.chalkboard ellipse,
+.chalkboard line,
+.chalkboard polyline,
+.chalkboard polygon {
+  stroke-linecap: round;
+  stroke-linejoin: round;
+}
