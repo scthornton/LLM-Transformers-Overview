@@ -28,7 +28,7 @@ git clone <YOUR_GIT_URL>
 cd llm-diagram-explorer
 
 # Step 3: Install the necessary dependencies
-npm i
+npm install
 
 # Step 4: Start the development server with auto-reloading and an instant preview
 npm run dev
